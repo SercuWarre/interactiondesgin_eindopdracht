@@ -38,10 +38,11 @@ def getPlayerInfo():
 def getPlayerInfoById(id):
     if request.method == 'GET':
         data = readJSONFile("./playerList.json")
+        data = data['players']
         for player in data:
-            if player['id'] == int(id):
+            if player['id'] == id:
                 return jsonify(player)
-        return jsonify({'error': 'player not found'})
+        return jsonify(data)
 #start app
 if __name__ == '__main__':
     app.run(host='127.0.0.1',port='5000',debug=True)
