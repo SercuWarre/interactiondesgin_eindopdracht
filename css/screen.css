@@ -428,8 +428,23 @@ box-shadow: 0 0 0 3px var(--global-input-focus-borderColor);
 .c-competion:focus {
     box-shadow: 0 0 0 3px var(--global-input-focus-borderColor);
 }
-
-
+ #notification {
+     display: none;
+     width: 6rem;
+        height: 3rem;
+     top: 70%;
+        left: 50%;
+     background-color: red;
+     position: absolute;
+ }
+#circle {
+  
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+}
 
 .c-button {
     font-size: 16px;
@@ -440,9 +455,9 @@ box-shadow: 0 0 0 3px var(--global-input-focus-borderColor);
     color: #fff;
     padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md);
     line-height: calc(var(--global-baseline) * 3);
-    width: 50%;
+    width: 50vh;
     outline: none;
-    transition: all var(--global-transition-timing-alpha);
+    /* transition: all var(--global-transition-timing-alpha); */
 }
 
 .c-button:hover {

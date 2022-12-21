@@ -1,0 +1,178 @@
+
+   { "players": [
+        {
+        "id": "1",
+        "name": " Emilie Hegh",
+        "type": "LB",
+        "date_of_birth": "1994-01-01",
+        "nationality": "Norway",
+        "country_code": "NOR",
+        "height": 183,
+        "weight": 78,
+        "jersey_number": 3,
+        "gender": "female",
+         "shots": 220,
+        "goals": 180,
+        "assists": 40,
+        "competitors": [
+        {
+            "id": "sr:competitor:6889",
+            "name": "Norway",
+            "country": "Norway",
+            "country_code": "NOR",
+            "abbreviation": "NOR"
+        },
+        {
+            "id": "sr:competitor:59265",
+            "name": "CSM Bucuresti",
+            "country": "Romania",
+            "country_code": "ROU",
+            "abbreviation": "BUC"
+        }
+    ]
+    },
+     {
+        "id": "2",
+        "name": "Aksel Strupstad",
+        "type": "LW",
+        "date_of_birth": "1997-02-15",
+        "nationality": "Norway",
+        "country_code": "NOR",
+        "height": 188,
+        "weight": 96,
+        "jersey_number": 20,
+        "gender": "male",
+         "shots": 93,
+        "goals": 39,
+        "assists": 54,
+        "competitors": [
+        {
+            "id": "sr:competitor:36457",
+            "name": "OIF Arendal Elite",
+            "country": "Norway",
+            "country_code": "NOR",
+            "abbreviation": "OIF"
+        }
+    ]
+    },
+     {
+        "id": "3",
+        "name": "Timm, Marcel",
+        "type": "P",
+        "date_of_birth": "1998-02-03",
+        "nationality": "Germany",
+        "country_code": "DEU",
+        "height": 195,
+        "weight": 100,
+        "jersey_number": 23,
+        "gender": "male",
+         "shots": 73,
+        "goals": 42,
+        "assists": 31,
+        "competitors": [
+        {
+            "id": "sr:competitor:5588",
+            "name": "Germany",
+            "country": "Germany",
+            "country_code": "DEU",
+            "abbreviation": "GER"
+        },
+        {
+            "id": "sr:competitor:4125",
+            "name": "Bregenz Handball",
+            "country": "Austria",
+            "country_code": "AUT",
+            "abbreviation": "BER"
+        }
+    ]
+    },
+       {
+        "id": "4",
+        "name": "Warre, Sercu",
+        "type": "M",
+        "date_of_birth": "2003-08-01",
+        "nationality": "Belgium",
+        "country_code": "BE",
+        "height": 175,
+        "weight": 60,
+        "jersey_number": 2,
+        "gender": "male",
+        "shots": 60,
+        "goals": 45,
+        "assists": 42,
+        "competitors": [
+        {
+            "id": "sr:competitor:5588",
+            "name": "liga3",
+            "country": "Belgium",
+            "country_code": "BE",
+            "abbreviation": "L3"
+        },
+        {
+            "id": "sr:competitor:4125",
+            "name": "liga1",
+            "country": "Belgium",
+            "country_code": "BE",
+            "abbreviation": "L1"
+        }
+    ]
+    },
+     {
+        "id": "5",
+        "name": "Medic, Petar",
+        "type": "RB",
+        "date_of_birth": "1996-06-12",
+        "nationality": "Croatia",
+        "country_code": "HRV",
+        "height": 196,
+        "weight": 91,
+        "jersey_number": 19,
+        "gender": "male",
+         "shots": 20,
+        "goals": 6,
+        "assists": 14,
+        "competitors": [
+        {
+            "id": "sr:competitor:5570",
+            "name": "Handball Tirol",
+            "country": "Austria",
+            "country_code": "AUT",
+            "abbreviation": "HAT"
+        }
+    ]
+    },{
+        "id": "6",
+        "name": "tom, Moerman",
+        "type": "RW",
+        "date_of_birth": "2001-03-23",
+        "nationality": "Belgium",
+        "country_code": "BE",
+        "height": 178,
+        "weight": 75,
+        "jersey_number": 15,
+        "gender": "male",
+        "shots": 99,
+        "goals": 72,
+        "assists": 32,
+        "competitors": [
+        {
+            "id": "sr:competitor:5588",
+            "name": "liga3",
+            "country": "Belgium",
+            "country_code": "BE",
+            "abbreviation": "L3"
+        },
+        {
+            "id": "sr:competitor:4125",
+            "name": "liga1",
+            "country": "Belgium",
+            "country_code": "BE",
+            "abbreviation": "L1"
+        }
+    ]
+    }
+    
+
+
+]
+   }

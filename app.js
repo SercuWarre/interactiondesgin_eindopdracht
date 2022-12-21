@@ -1,69 +1,127 @@
 "use strict";
 
- async function getPlayerInfo () {
-  //   const apiKey = "7pe7uupaubprfbr96au42ffb";
-  //   const playerID = "41c44740-d0f6-44ab-8347-3b5d515e5ecf";
-  const config = {
-    method: 'GET',
-    // mode: "cors",
-   
-  };
-    
-fetch(
-  'https://api.sportradar.us/handball/trial/v2/en/players/sr:player:124683/profile.json?api_key=sa9v5e32szux4muf3frxqxkg',
-  config
-)
-  .then(function (response) {
-    console.info('Er is een response teruggekomen van de server');
-    // console.log(response.json())
-    return response.json();
-  })
-  .then(function (jsonObject) {
-    console.info('json object is aangemaakt');
-    console.log(jsonObject);
-  });
-}
+ async function getPlayerInfo (id) {
+    const url = `http://127.0.0.1:5000/api/v1/players/${id}`;
+    const response = await get(url)
+	  console.log(response)
+    return response;
+  }
  
      
       
       
-
+const get = (url) =>
+  fetch(url)
+    .then((r) => r.json())
+    .catch((error) => console.log(error));
       
  
-function randomizeValues() {
+ async function randomizeValues() {
+  let notification = document.getElementById('notification');
+
+  // Display the notification
+  notification.style.display = 'block';
+
+  // Hide the notification after 2 seconds
+  setTimeout(function () {
+    notification.style.display = 'none';
+  }, 1000);
   // Generate random id and assign them to variables
-  var value = Math.floor(Math.random() * 100);
-  document.querySelector('.js-nummer').innerHTML = value;
-  var value1 = Math.floor(Math.random() * 100);
-  var value2 = Math.floor(Math.random() * 100);
-  var value3 = 100
-  console.log(value1, value2, value3);
-  var progress1 = value1 / value3 * 100;
-  var progress=value2/value3*100;
+  let randomNumber = Math.random();
+  const id = Math.floor(randomNumber * 6 + 1);
+  console.log(id);
+  let data=   await getPlayerInfo(id);
+  console.log(data);
+  var nummer = data['jersey_number'];
+console.log(nummer);
+  document.querySelector('.js-nummer').innerHTML ="player number: "+  nummer;
+  var name = data['name'];
+  document.querySelector('.js-name').innerHTML = name;
+  var position = data['type'];
+  document.querySelector('.js-position').innerHTML ="position: " +position;
+
+  if(position=="M"){
+
+
+  let circle = document.getElementById('circle');
+
+// Set the left and top properties to position the circle
+circle.style.left = '55%';
+circle.style.top = '50%';}
+  if(position=="P"){
+    let circle = document.getElementById('circle');
+    circle.style.left = '60%';
+    circle.style.top = '50%';
+  }
+  if(position=="RB"){
+    let circle = document.getElementById('circle');
+    circle.style.left = '57%';
+    circle.style.top = '60%';
+  }
+  if(position=="LB"){
+    let circle = document.getElementById('circle');
+    circle.style.left = '57%';
+    circle.style.top = '40%';
+  }
+  if(position=="LW"){
+    let circle = document.getElementById('circle');
+    circle.style.left = '66%';
+    circle.style.top = '33%';
+  }
+  if(position=="RW"){
+    let circle = document.getElementById('circle');
+    circle.style.left = '66%';
+    circle.style.top = '65%';
+  }
+
+
+
+  var age = data['date_of_birth'];
+  document.querySelector('.js-age').innerHTML ="date_of_birth: "+ age;
+  var height = data['height'];
+  document.querySelector('.js-height').innerHTML ="height: " +height+"cm";
+  var weight = data['weight'];
+  document.querySelector('.js-weight').innerHTML ="weight: " +weight+"kg";
+  var competitions = data['competitors'];
+  let comp=[];
+  document.querySelector('.js-competition').innerHTML="";
+  for (var i = 0; i < competitions.length; i++) {
+
+     comp= competitions[i].name;
+    console.log(comp);
+    document.querySelector('.js-competition').innerHTML+="<li>"+comp+"</li>";
+  }
+  var goals = data['goals'];
+  document.querySelector('.js-goals').innerHTML =goals;
+  var shots = data['shots'];
+  document.querySelector('.js-shots').innerHTML =shots;
+  var assists = data['assists'];
+  document.querySelector('.js-assists').innerHTML =assists;
+
+
+
+
+ 
+  var progress=goals/shots*100;
   progress = Math.round(progress, 2);
-  progress1 = Math.round(progress1, 2);
-  console.log(progress);
-  console.log(progress1);
-  // Update the values on the page
-  // document.getElementById('progress1').value = value1;
-  // document.getElementById('progress').value = value2;
-  // document.getElementById('progress') = value2;
+
+
+  // // Update the values on the page
+
   document.getElementById('js-progresss').innerHTML = `${progress}%`;
-  document.getElementById('js-progresss1').innerHTML = `${progress1}%`;
  
     var element = document.getElementById('js-progress');
     var width = progress;
     element.style.width = width + '%';
-    var element1 = document.getElementById('js-progress1');
-    var width1 = progress1;
-    element1.style.width = width1 + '%';
 }
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', async function () {
   console.log('Test');
+  randomizeValues();
+  // const data =  getPlayer();
 
-  const data=  getPlayerInfo();
-  console.log(data);
-  
 });
