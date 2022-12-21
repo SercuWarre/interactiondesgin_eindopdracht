@@ -10,7 +10,7 @@
   };
     
 fetch(
-  'http://api.sportradar.us/handball/trial/v2/en/players/sr:player:124683/profile.json?api_key=sa9v5e32szux4muf3frxqxkg',
+  'https://api.sportradar.us/handball/trial/v2/en/players/sr:player:124683/profile.json?api_key=sa9v5e32szux4muf3frxqxkg',
   config
 )
   .then(function (response) {
