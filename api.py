@@ -32,17 +32,16 @@ def hello():
 def getPlayerInfo():
     if request.method == 'GET':
         data = readJSONFile("./playerList.json")
-        return jsonify(data)
+        return jsonify(data['players'])
 
 @app.route(endpoint + 'players/<id>', methods=['GET'])
 def getPlayerInfoById(id):
     if request.method == 'GET':
         data = readJSONFile("./playerList.json")
-        data= data['players']
         for player in data:
-            if player['id'] == id:
+            if player['id'] == int(id):
                 return jsonify(player)
-        return jsonify(data)
+        return jsonify({'error': 'player not found'})
 #start app
 if __name__ == '__main__':
     app.run(host='127.0.0.1',port='5000',debug=True)
