@@ -1,20 +1,29 @@
-
+"use strict";
 
  async function getPlayerInfo () {
   //   const apiKey = "7pe7uupaubprfbr96au42ffb";
   //   const playerID = "41c44740-d0f6-44ab-8347-3b5d515e5ecf";
-  const url = `https://api.sportradar.com/handball/trial/v2/en/players/sr:player:1289838/profile.json?api_key=7pe7uupaubprfbr96au42ffb`;
   const config = {
     method: 'GET',
-    mode: 'no-cors',
-    // headers: { 'Access-Control-Allow-Origin': '*' },
+    // mode: "cors",
+   
   };
-  const response = await fetch(url, config);
-  // const data = await response.json();
-  console.log(response);
-  return response;
-  
+    
+fetch(
+  'http://api.sportradar.us/handball/trial/v2/en/players/sr:player:124683/profile.json?api_key=sa9v5e32szux4muf3frxqxkg',
+  config
+)
+  .then(function (response) {
+    console.info('Er is een response teruggekomen van de server');
+    // console.log(response.json())
+    return response.json();
+  })
+  .then(function (jsonObject) {
+    console.info('json object is aangemaakt');
+    console.log(jsonObject);
+  });
 }
+ 
      
       
       
